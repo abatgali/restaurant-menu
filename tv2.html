@@ -4,36 +4,527 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="refresh" content="300" />
-  <title>Menu – TV 2</title>
+  <title>Indy Wings – Menu TV 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --green-dark: #14532d;
+      --green: #166534;
+      --green-light: #22c55e;
+      --gold: #facc15;
+      --gold-dark: #eab308;
+      --red: #dc2626;
+      --red-dark: #b91c1c;
+      --bg: #111111;
+      --card-bg: #1a1a1a;
+      --card-border: #2a2a2a;
+      --text: #f5f5f5;
+      --text-muted: #a3a3a3;
+      --text-dim: #737373;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      font-size: 32px; /* 2× base for 4K */
+    }
+
     html, body {
-      width: 100%; height: 100%;
-      background: #000;
+      width: 100%;
+      height: 100vh;
       overflow: hidden;
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+    }
+
+    body {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 0;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      padding: 20px 80px;
+      border-bottom: 8px solid var(--gold);
     }
-    img {
-      max-width: 100%;
-      max-height: 100vh;
-      object-fit: contain;
+
+    .header .brand {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .header .brand h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      letter-spacing: 0.06em;
+      color: #fff;
+      text-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+    }
+
+    .header .tagline {
+      font-size: 0.95rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .header .address {
+      text-align: right;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+
+    /* ── Main Grid ── */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr 1fr;
+      gap: 32px;
+      padding: 32px 40px;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    /* ── Section Card ── */
+    .section {
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.06em;
+      padding: 16px 32px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      border-bottom: 6px solid var(--gold);
+      text-align: center;
+    }
+
+    .section-title.red {
+      background: linear-gradient(135deg, var(--red-dark), var(--red));
+    }
+
+    .section-body {
+      padding: 24px 32px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* ── Menu Item Row ── */
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 12px 0;
+      border-bottom: 2px solid #222;
+    }
+
+    .item:last-child { border-bottom: none; }
+
+    .item-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .item-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .item-price {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--gold);
+      white-space: nowrap;
+      margin-left: 24px;
+    }
+
+    /* ── Column layouts ── */
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* ── Sub-header inside section ── */
+    .sub-header {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      color: var(--green-light);
+      letter-spacing: 0.04em;
+      margin-top: 8px;
+      margin-bottom: 4px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #333;
+    }
+
+    /* ── Wings Grid ── */
+    .wings-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 12px 0;
+    }
+
+    .wing-card {
+      background: #222;
+      border: 2px solid #333;
+      border-radius: 16px;
+      padding: 20px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .wing-card .info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .wing-card .count {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--text);
+    }
+
+    .wing-card .type {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .wing-card .price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+    }
+
+    .wing-card.boneless {
+      border-color: var(--green);
+    }
+
+    .wing-card.classic {
+      border-color: var(--red-dark);
+    }
+
+    .mix-match {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--green-light);
+      font-weight: 600;
+      padding: 12px 0 4px;
+    }
+
+    /* ── Combo Card ── */
+    .combo-card {
+      background: #222;
+      border: 2px solid #333;
+      border-radius: 16px;
+      padding: 16px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .combo-card .combo-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .combo-card .combo-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .combo-card .combo-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .combo-card .combo-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.7rem;
+      color: var(--gold);
+    }
+
+    .combo-divider {
+      width: 100%;
+      border: none;
+      border-top: 2px solid #333;
+      margin: 8px 0;
+    }
+
+    /* ── Diagonal Photo Collage ── */
+    .collage {
+      flex: 1;
+      display: flex;
+      gap: 12px;
+      overflow: hidden;
+      border-radius: 20px;
+      margin-top: 16px;
+      min-height: 0;
+    }
+
+    .collage-strip {
+      flex: 1;
+      overflow: hidden;
+      transform: skewX(-12deg);
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .collage-strip img {
+      width: 140%;
+      height: 100%;
+      object-fit: cover;
+      transform: skewX(12deg) translateX(-15%);
       display: block;
+      filter: brightness(0.9) saturate(1.15);
+    }
+
+    .collage-strip::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.35));
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
-  <img src="images/menu-tv2.png" alt="Menu TV 2" />
+
+  <!-- ── HEADER ── -->
+  <div class="header">
+    <div class="brand">
+      <h1>INDY WINGS</h1>
+      <span class="tagline">Wings / Burgers / Hot Dogs / Fries & More</span>
+    </div>
+    <div class="address">
+      3623 Shelby St<br />Indianapolis, IN 46227
+    </div>
+  </div>
+
+  <!-- ── MENU GRID ── -->
+  <div class="menu-grid">
+
+    <!-- ══ COLUMN 1: Special Combos ══ -->
+    <div class="col">
+      <div class="section" style="flex:1;">
+        <div class="section-title red">Special Combos</div>
+        <div class="section-body" style="gap:8px;">
+
+          <div class="combo-card">
+            <div class="combo-info">
+              <span class="combo-name">Chicken Sandwich Combo</span>
+              <span class="combo-desc">Served with fries & drink</span>
+            </div>
+            <span class="combo-price">$9.99</span>
+          </div>
+
+          <div class="combo-card">
+            <div class="combo-info">
+              <span class="combo-name">Hamburger</span>
+            </div>
+            <span class="combo-price">$9.99</span>
+          </div>
+
+          <div class="combo-card">
+            <div class="combo-info">
+              <span class="combo-name">Hamburger Combo</span>
+              <span class="combo-desc">With fries & drink</span>
+            </div>
+            <span class="combo-price">$10.99</span>
+          </div>
+
+          <div class="combo-card">
+            <div class="combo-info">
+              <span class="combo-name">Hot Dog</span>
+            </div>
+            <span class="combo-price">$4.59</span>
+          </div>
+
+          <div class="combo-card">
+            <div class="combo-info">
+              <span class="combo-name">Hot Dog Deluxe</span>
+            </div>
+            <span class="combo-price">$5.99</span>
+          </div>
+
+          <hr class="combo-divider" />
+
+          <div class="sub-header">Wing Combos <span style="font-family:Inter;font-size:0.72rem;color:var(--text-muted);">Served with fries, drink & one dip</span></div>
+
+          <div class="combo-card">
+            <div class="combo-info">
+              <span class="combo-name">5 PC Classic Combo</span>
+            </div>
+            <span class="combo-price">$12.99</span>
+          </div>
+
+          <div class="combo-card">
+            <div class="combo-info">
+              <span class="combo-name">5 PC Boneless Combo</span>
+            </div>
+            <span class="combo-price">$11.99</span>
+          </div>
+
+          <div class="combo-card">
+            <div class="combo-info">
+              <span class="combo-name">10 PC Classic Combo</span>
+            </div>
+            <span class="combo-price">$16.99</span>
+          </div>
+
+          <div class="combo-card">
+            <div class="combo-info">
+              <span class="combo-name">10 PC Boneless Combo</span>
+            </div>
+            <span class="combo-price">$15.99</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ COLUMN 2: Wings Only ══ -->
+    <div class="col">
+      <div class="section" style="flex:1;">
+        <div class="section-title">Wings Only</div>
+        <div class="section-body">
+          <p class="mix-match">Flavor Mix & Match available for +$1</p>
+
+          <div class="wings-grid">
+            <div class="wing-card boneless">
+              <div class="info">
+                <span class="count">10 PC</span>
+                <span class="type">Boneless</span>
+              </div>
+              <span class="price">$12.99</span>
+            </div>
+
+            <div class="wing-card classic">
+              <div class="info">
+                <span class="count">10 PC</span>
+                <span class="type">Classic</span>
+              </div>
+              <span class="price">$13.99</span>
+            </div>
+
+            <div class="wing-card boneless">
+              <div class="info">
+                <span class="count">15 PC</span>
+                <span class="type">Boneless</span>
+              </div>
+              <span class="price">$16.99</span>
+            </div>
+
+            <div class="wing-card classic">
+              <div class="info">
+                <span class="count">15 PC</span>
+                <span class="type">Classic</span>
+              </div>
+              <span class="price">$17.99</span>
+            </div>
+
+            <div class="wing-card boneless">
+              <div class="info">
+                <span class="count">20 PC</span>
+                <span class="type">Boneless</span>
+              </div>
+              <span class="price">$22.99</span>
+            </div>
+
+            <div class="wing-card classic">
+              <div class="info">
+                <span class="count">20 PC</span>
+                <span class="type">Classic</span>
+              </div>
+              <span class="price">$23.99</span>
+            </div>
+          </div>
+
+          <!-- Diagonal Photo Collage -->
+          <div class="collage">
+            <div class="collage-strip">
+              <img src="images/chad-montano-gE28aTnlqJA-unsplash.jpg" alt="Wings with ranch" />
+            </div>
+            <div class="collage-strip">
+              <img src="images/jim-sosengphet-CgXEzyC2fNA-unsplash.jpg" alt="Glazed wings" />
+            </div>
+            <div class="collage-strip">
+              <img src="images/erik-mclean-UBtRdqWUbzc-unsplash.jpg" alt="Crispy wings" />
+            </div>
+            <div class="collage-strip">
+              <img src="images/corey-watson-g6KQZywJUo0-unsplash.jpg" alt="Seasoned wings" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ COLUMN 3: Chicken Tenders ══ -->
+    <div class="col">
+      <div class="section" style="flex:1;">
+        <div class="section-title">Chicken Tenders</div>
+        <div class="section-body" style="gap:20px;">
+
+          <div class="combo-card">
+            <div class="combo-info">
+              <span class="combo-name">3 PC Tender Combo</span>
+              <span class="combo-desc">Served with fries, drink & one dip</span>
+            </div>
+            <span class="combo-price">$9.99</span>
+          </div>
+
+          <div class="combo-card">
+            <div class="combo-info">
+              <span class="combo-name">5 PC Meal</span>
+              <span class="combo-desc">Served with fries, drink & dip</span>
+            </div>
+            <span class="combo-price">$12.99</span>
+          </div>
+
+          <div class="combo-card">
+            <div class="combo-info">
+              <span class="combo-name">5 PC Tenders</span>
+              <span class="combo-desc">Tenders only</span>
+            </div>
+            <span class="combo-price">$9.99</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
 
   <script>
     // Reload every 5 minutes to pick up any menu updates
     setTimeout(() => location.reload(true), 5 * 60 * 1000);
-
-    // If image fails to load, retry after 30 seconds
-    document.querySelector('img').onerror = function() {
-      setTimeout(() => location.reload(true), 30 * 1000);
-    };
   </script>
 </body>
 </html>
