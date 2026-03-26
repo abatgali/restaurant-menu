@@ -28,7 +28,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html {
-      font-size: 32px; /* 2× base for 4K */
+      font-size: 16px; /* 1× base for 1080p */
     }
 
     html, body {
@@ -52,14 +52,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 80px;
-      border-bottom: 8px solid var(--gold);
+      padding: 10px 40px;
+      border-bottom: 4px solid var(--gold);
     }
 
     .header .brand {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 16px;
     }
 
     .header .brand h1 {
@@ -67,7 +67,7 @@
       font-size: 2.8rem;
       letter-spacing: 0.06em;
       color: #fff;
-      text-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
     }
 
     .header .tagline {
@@ -88,8 +88,8 @@
     .menu-grid {
       display: grid;
       grid-template-columns: 1.2fr 1fr 1fr;
-      gap: 32px;
-      padding: 32px 40px;
+      gap: 16px;
+      padding: 16px 20px;
       overflow: hidden;
       height: 100%;
     }
@@ -97,8 +97,8 @@
     /* ── Section Card ── */
     .section {
       background: var(--card-bg);
-      border: 2px solid var(--card-border);
-      border-radius: 24px;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -108,10 +108,10 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.6rem;
       letter-spacing: 0.06em;
-      padding: 20px 32px;
+      padding: 10px 16px;
       color: #fff;
       background: linear-gradient(135deg, var(--green-dark), var(--green));
-      border-bottom: 6px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
       text-align: center;
     }
 
@@ -120,11 +120,11 @@
     }
 
     .section-body {
-      padding: 20px 28px;
+      padding: 10px 14px;
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 4px;
     }
 
     /* ── Menu Item Row ── */
@@ -132,8 +132,8 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      padding: 10px 0;
-      border-bottom: 2px solid #222;
+      padding: 5px 0;
+      border-bottom: 1px solid #222;
     }
 
     .item:last-child { border-bottom: none; }
@@ -155,7 +155,7 @@
       font-size: 0.95rem;
       color: var(--gold);
       white-space: nowrap;
-      margin-left: 24px;
+      margin-left: 12px;
     }
 
     /* ── Sub-header inside section ── */
@@ -164,16 +164,16 @@
       font-size: 1.05rem;
       color: var(--green-light);
       letter-spacing: 0.04em;
-      margin-top: 12px;
-      margin-bottom: 4px;
-      padding-bottom: 4px;
-      border-bottom: 2px solid #333;
+      margin-top: 6px;
+      margin-bottom: 2px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #333;
     }
 
     /* ── Group Meals ── */
     .group-item {
-      padding: 12px 0;
-      border-bottom: 2px solid #222;
+      padding: 6px 0;
+      border-bottom: 1px solid #222;
     }
     .group-item:last-child { border-bottom: none; }
 
@@ -196,8 +196,8 @@
 
     .group-item .prices {
       display: flex;
-      gap: 32px;
-      margin-top: 4px;
+      gap: 16px;
+      margin-top: 2px;
       font-size: 0.85rem;
     }
 
@@ -219,15 +219,15 @@
     .flavors-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      padding: 16px 0;
+      gap: 6px;
+      padding: 8px 0;
     }
 
     .flavor-tag {
       background: #222;
-      border: 2px solid #333;
-      border-radius: 12px;
-      padding: 10px 20px;
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 5px 10px;
       font-size: 0.8rem;
       font-weight: 600;
       color: var(--text);
@@ -237,15 +237,15 @@
     .dips-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      padding: 12px 0;
+      gap: 6px;
+      padding: 6px 0;
     }
 
     .dip-tag {
       background: linear-gradient(135deg, #292524, #1c1917);
-      border: 2px solid #44403c;
-      border-radius: 40px;
-      padding: 10px 28px;
+      border: 1px solid #44403c;
+      border-radius: 20px;
+      padding: 5px 14px;
       font-size: 0.82rem;
       font-weight: 600;
       color: var(--text);
@@ -255,7 +255,7 @@
     .mexican-meat {
       font-size: 0.78rem;
       color: var(--text-muted);
-      padding: 8px 0 12px;
+      padding: 4px 0 6px;
       font-style: italic;
     }
 
@@ -263,13 +263,13 @@
     .col {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 16px;
     }
 
     /* ── Price highlight ── */
     .price-split {
       display: flex;
-      gap: 16px;
+      gap: 8px;
       align-items: baseline;
     }
 
@@ -432,10 +432,18 @@
           <p class="mexican-meat">Your choice of meat: Chicken, Chorizo, Beef, Steak</p>
           <div class="item">
             <span class="item-name">Tacos <span class="item-desc">(3 pcs)</span></span>
-            <span class="item-price">$10.99</span>
+            <span class="item-price">$11.99</span>
+          </div>
+          <div class="item">
+            <span class="item-name">Soft Tacos <span class="item-desc">(3 pcs)</span></span>
+            <span class="item-price">$11.99</span>
           </div>
           <div class="item">
             <span class="item-name">Burritos</span>
+            <span class="item-price">$12.99</span>
+          </div>
+          <div class="item">
+            <span class="item-name">Quesadillas</span>
             <span class="item-price">$12.99</span>
           </div>
           <div class="item">

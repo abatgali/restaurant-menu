@@ -28,7 +28,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html {
-      font-size: 32px; /* 2× base for 4K */
+      font-size: 16px; /* 1× base for 1080p */
     }
 
     html, body {
@@ -52,14 +52,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 80px;
-      border-bottom: 8px solid var(--gold);
+      padding: 10px 40px;
+      border-bottom: 4px solid var(--gold);
     }
 
     .header .brand {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 16px;
     }
 
     .header .brand h1 {
@@ -67,7 +67,7 @@
       font-size: 2.8rem;
       letter-spacing: 0.06em;
       color: #fff;
-      text-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
     }
 
     .header .tagline {
@@ -88,8 +88,8 @@
     .menu-grid {
       display: grid;
       grid-template-columns: 1fr 1.6fr 1fr;
-      gap: 32px;
-      padding: 32px 40px;
+      gap: 16px;
+      padding: 16px 20px;
       overflow: hidden;
       height: 100%;
     }
@@ -97,8 +97,8 @@
     /* ── Section Card ── */
     .section {
       background: var(--card-bg);
-      border: 2px solid var(--card-border);
-      border-radius: 24px;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -108,10 +108,10 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.5rem;
       letter-spacing: 0.06em;
-      padding: 16px 32px;
+      padding: 8px 16px;
       color: #fff;
       background: linear-gradient(135deg, var(--green-dark), var(--green));
-      border-bottom: 6px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
       text-align: center;
     }
 
@@ -120,11 +120,11 @@
     }
 
     .section-body {
-      padding: 24px 32px;
+      padding: 12px 16px;
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
     }
 
     /* ── Menu Item Row ── */
@@ -132,8 +132,8 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      padding: 12px 0;
-      border-bottom: 2px solid #222;
+      padding: 6px 0;
+      border-bottom: 1px solid #222;
     }
 
     .item:last-child { border-bottom: none; }
@@ -155,14 +155,14 @@
       font-size: 1rem;
       color: var(--gold);
       white-space: nowrap;
-      margin-left: 24px;
+      margin-left: 12px;
     }
 
     /* ── Column layouts ── */
     .col {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 16px;
     }
 
     /* ── Sub-header inside section ── */
@@ -171,25 +171,25 @@
       font-size: 1.1rem;
       color: var(--green-light);
       letter-spacing: 0.04em;
-      margin-top: 8px;
-      margin-bottom: 4px;
-      padding-bottom: 6px;
-      border-bottom: 2px solid #333;
+      margin-top: 4px;
+      margin-bottom: 2px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #333;
     }
 
     /* ── Wings Grid ── */
     .wings-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      padding: 12px 0;
+      gap: 10px;
+      padding: 6px 0;
     }
 
     .wing-card {
       background: #222;
-      border: 2px solid #333;
-      border-radius: 16px;
-      padding: 20px 28px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 10px 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -233,15 +233,15 @@
       font-size: 0.82rem;
       color: var(--green-light);
       font-weight: 600;
-      padding: 12px 0 4px;
+      padding: 6px 0 2px;
     }
 
     /* ── Combo Card ── */
     .combo-card {
       background: #222;
-      border: 2px solid #333;
-      border-radius: 16px;
-      padding: 16px 28px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 8px 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -273,18 +273,18 @@
     .combo-divider {
       width: 100%;
       border: none;
-      border-top: 2px solid #333;
-      margin: 8px 0;
+      border-top: 1px solid #333;
+      margin: 4px 0;
     }
 
     /* ── Diagonal Photo Collage ── */
     .collage {
       flex: 1;
       display: flex;
-      gap: 12px;
+      gap: 6px;
       overflow: hidden;
-      border-radius: 20px;
-      margin-top: 16px;
+      border-radius: 10px;
+      margin-top: 8px;
       min-height: 0;
     }
 
@@ -292,7 +292,7 @@
       flex: 1;
       overflow: hidden;
       transform: skewX(-12deg);
-      border-radius: 12px;
+      border-radius: 6px;
       position: relative;
     }
 
@@ -306,13 +306,13 @@
     }
 
     .collage-strip:first-child {
-      margin-left: -400px;
-      border-radius: 0 12px 12px 0;
+      margin-left: -200px;
+      border-radius: 0 6px 6px 0;
     }
 
     .collage-strip:last-child {
-      margin-right: -400px;
-      border-radius: 12px 0 0 12px;
+      margin-right: -200px;
+      border-radius: 6px 0 0 6px;
     }
 
     .collage-strip::after {
@@ -344,7 +344,7 @@
     <div class="col">
       <div class="section" style="flex:1;">
         <div class="section-title red">Special Combos</div>
-        <div class="section-body" style="gap:8px;">
+        <div class="section-body" style="gap:4px;">
 
           <div class="combo-card">
             <div class="combo-info">
@@ -500,7 +500,7 @@
     <div class="col">
       <div class="section" style="flex:1;">
         <div class="section-title">Chicken Tenders</div>
-        <div class="section-body" style="gap:20px;">
+        <div class="section-body" style="gap:10px;">
 
           <div class="combo-card">
             <div class="combo-info">
