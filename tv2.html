@@ -28,7 +28,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html {
-      font-size: 8px; /* base for 960×540 Fire TV Silk viewport */
+      font-size: 16px;
     }
 
     html, body {
@@ -43,7 +43,6 @@
     body {
       display: grid;
       grid-template-rows: auto 1fr;
-      gap: 0;
     }
 
     /* ── Header ── */
@@ -52,26 +51,26 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 5px 20px;
-      border-bottom: 2px solid var(--gold);
+      padding: 12px 40px;
+      border-bottom: 4px solid var(--gold);
     }
 
     .header .brand {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 20px;
     }
 
     .header .brand h1 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       letter-spacing: 0.06em;
       color: #fff;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
     }
 
     .header .tagline {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--gold);
       font-weight: 600;
       letter-spacing: 0.04em;
@@ -79,7 +78,7 @@
 
     .header .address {
       text-align: right;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: rgba(255,255,255,0.7);
       line-height: 1.5;
     }
@@ -88,8 +87,8 @@
     .menu-grid {
       display: grid;
       grid-template-columns: 1fr 1.6fr 1fr;
-      gap: 8px;
-      padding: 8px 10px;
+      gap: 20px;
+      padding: 20px 24px;
       overflow: hidden;
       height: 100%;
     }
@@ -98,7 +97,7 @@
     .section {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 6px;
+      border-radius: 14px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -106,12 +105,12 @@
 
     .section-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       letter-spacing: 0.06em;
-      padding: 4px 8px;
+      padding: 10px 18px;
       color: #fff;
       background: linear-gradient(135deg, var(--green-dark), var(--green));
-      border-bottom: 2px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
       text-align: center;
     }
 
@@ -120,11 +119,11 @@
     }
 
     .section-body {
-      padding: 6px 8px;
+      padding: 12px 16px;
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 1px;
+      gap: 4px;
     }
 
     /* ── Menu Item Row ── */
@@ -132,7 +131,7 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      padding: 3px 0;
+      padding: 6px 0;
       border-bottom: 1px solid #222;
     }
 
@@ -140,7 +139,7 @@
 
     .item-name {
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--text);
     }
 
@@ -152,28 +151,28 @@
 
     .item-price {
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--gold);
       white-space: nowrap;
-      margin-left: 6px;
+      margin-left: 12px;
     }
 
     /* ── Column layouts ── */
     .col {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 20px;
     }
 
     /* ── Sub-header inside section ── */
     .sub-header {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--green-light);
       letter-spacing: 0.04em;
-      margin-top: 2px;
-      margin-bottom: 1px;
-      padding-bottom: 1px;
+      margin-top: 6px;
+      margin-bottom: 2px;
+      padding-bottom: 4px;
       border-bottom: 1px solid #333;
     }
 
@@ -181,15 +180,15 @@
     .wings-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5px;
-      padding: 3px 0;
+      gap: 12px;
+      padding: 8px 0;
     }
 
     .wing-card {
       background: #222;
       border: 1px solid #333;
-      border-radius: 4px;
-      padding: 5px 7px;
+      border-radius: 10px;
+      padding: 12px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -203,7 +202,7 @@
 
     .wing-card .count {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       color: var(--text);
     }
 
@@ -216,7 +215,7 @@
 
     .wing-card .price {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: var(--gold);
     }
 
@@ -233,15 +232,15 @@
       font-size: 0.82rem;
       color: var(--green-light);
       font-weight: 600;
-      padding: 3px 0 1px;
+      padding: 6px 0 2px;
     }
 
     /* ── Combo Card ── */
     .combo-card {
       background: #222;
       border: 1px solid #333;
-      border-radius: 4px;
-      padding: 4px 7px;
+      border-radius: 10px;
+      padding: 10px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -255,7 +254,7 @@
 
     .combo-card .combo-name {
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--text);
     }
 
@@ -266,7 +265,7 @@
 
     .combo-card .combo-price {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       color: var(--gold);
     }
 
@@ -274,17 +273,17 @@
       width: 100%;
       border: none;
       border-top: 1px solid #333;
-      margin: 2px 0;
+      margin: 4px 0;
     }
 
     /* ── Diagonal Photo Collage ── */
     .collage {
       flex: 1;
       display: flex;
-      gap: 3px;
+      gap: 8px;
       overflow: hidden;
-      border-radius: 5px;
-      margin-top: 4px;
+      border-radius: 12px;
+      margin-top: 10px;
       min-height: 0;
     }
 
@@ -292,7 +291,7 @@
       flex: 1;
       overflow: hidden;
       transform: skewX(-12deg);
-      border-radius: 3px;
+      border-radius: 8px;
       position: relative;
     }
 
@@ -306,13 +305,13 @@
     }
 
     .collage-strip:first-child {
-      margin-left: -100px;
-      border-radius: 0 3px 3px 0;
+      margin-left: -200px;
+      border-radius: 0 8px 8px 0;
     }
 
     .collage-strip:last-child {
-      margin-right: -100px;
-      border-radius: 3px 0 0 3px;
+      margin-right: -200px;
+      border-radius: 8px 0 0 8px;
     }
 
     .collage-strip::after {
@@ -344,7 +343,7 @@
     <div class="col">
       <div class="section" style="flex:1;">
         <div class="section-title red">Special Combos</div>
-        <div class="section-body" style="gap:2px;">
+        <div class="section-body" style="gap:12px;">
 
           <div class="combo-card">
             <div class="combo-info">
@@ -500,7 +499,7 @@
     <div class="col">
       <div class="section" style="flex:1;">
         <div class="section-title">Chicken Tenders</div>
-        <div class="section-body" style="gap:5px;">
+        <div class="section-body" style="gap:12px;">
 
           <div class="combo-card">
             <div class="combo-info">
