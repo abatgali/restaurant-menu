@@ -28,7 +28,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html {
-      font-size: 16px; /* 1× base for 1080p */
+      font-size: 8px; /* base for 960×540 Fire TV Silk viewport */
     }
 
     html, body {
@@ -52,14 +52,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 40px;
-      border-bottom: 4px solid var(--gold);
+      padding: 5px 20px;
+      border-bottom: 2px solid var(--gold);
     }
 
     .header .brand {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 8px;
     }
 
     .header .brand h1 {
@@ -67,7 +67,7 @@
       font-size: 2.8rem;
       letter-spacing: 0.06em;
       color: #fff;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
     }
 
     .header .tagline {
@@ -88,8 +88,8 @@
     .menu-grid {
       display: grid;
       grid-template-columns: 1.2fr 1fr 1fr;
-      gap: 16px;
-      padding: 16px 20px;
+      gap: 8px;
+      padding: 8px 10px;
       overflow: hidden;
       height: 100%;
     }
@@ -98,7 +98,7 @@
     .section {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 12px;
+      border-radius: 6px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -108,10 +108,10 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.6rem;
       letter-spacing: 0.06em;
-      padding: 10px 16px;
+      padding: 5px 8px;
       color: #fff;
       background: linear-gradient(135deg, var(--green-dark), var(--green));
-      border-bottom: 3px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
       text-align: center;
     }
 
@@ -120,11 +120,11 @@
     }
 
     .section-body {
-      padding: 10px 14px;
+      padding: 5px 7px;
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
     }
 
     /* ── Menu Item Row ── */
@@ -132,7 +132,7 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      padding: 5px 0;
+      padding: 2px 0;
       border-bottom: 1px solid #222;
     }
 
@@ -155,7 +155,7 @@
       font-size: 0.95rem;
       color: var(--gold);
       white-space: nowrap;
-      margin-left: 12px;
+      margin-left: 6px;
     }
 
     /* ── Sub-header inside section ── */
@@ -164,15 +164,15 @@
       font-size: 1.05rem;
       color: var(--green-light);
       letter-spacing: 0.04em;
-      margin-top: 6px;
-      margin-bottom: 2px;
-      padding-bottom: 2px;
+      margin-top: 3px;
+      margin-bottom: 1px;
+      padding-bottom: 1px;
       border-bottom: 1px solid #333;
     }
 
     /* ── Group Meals ── */
     .group-item {
-      padding: 6px 0;
+      padding: 3px 0;
       border-bottom: 1px solid #222;
     }
     .group-item:last-child { border-bottom: none; }
@@ -196,8 +196,8 @@
 
     .group-item .prices {
       display: flex;
-      gap: 16px;
-      margin-top: 2px;
+      gap: 8px;
+      margin-top: 1px;
       font-size: 0.85rem;
     }
 
@@ -219,15 +219,15 @@
     .flavors-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      padding: 8px 0;
+      gap: 3px;
+      padding: 4px 0;
     }
 
     .flavor-tag {
       background: #222;
       border: 1px solid #333;
-      border-radius: 6px;
-      padding: 5px 10px;
+      border-radius: 3px;
+      padding: 2px 5px;
       font-size: 0.8rem;
       font-weight: 600;
       color: var(--text);
@@ -237,15 +237,15 @@
     .dips-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      padding: 6px 0;
+      gap: 3px;
+      padding: 3px 0;
     }
 
     .dip-tag {
       background: linear-gradient(135deg, #292524, #1c1917);
       border: 1px solid #44403c;
-      border-radius: 20px;
-      padding: 5px 14px;
+      border-radius: 10px;
+      padding: 2px 7px;
       font-size: 0.82rem;
       font-weight: 600;
       color: var(--text);
@@ -255,7 +255,7 @@
     .mexican-meat {
       font-size: 0.78rem;
       color: var(--text-muted);
-      padding: 4px 0 6px;
+      padding: 2px 0 3px;
       font-style: italic;
     }
 
@@ -263,13 +263,13 @@
     .col {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 8px;
     }
 
     /* ── Price highlight ── */
     .price-split {
       display: flex;
-      gap: 8px;
+      gap: 4px;
       align-items: baseline;
     }
 
@@ -432,23 +432,23 @@
           <p class="mexican-meat">Your choice of meat: Chicken, Chorizo, Beef, Steak</p>
           <div class="item">
             <span class="item-name">Tacos <span class="item-desc">(3 pcs)</span></span>
-            <span class="item-price">$11.99</span>
+            <span class="item-price">$12.99</span>
           </div>
           <div class="item">
             <span class="item-name">Soft Tacos <span class="item-desc">(3 pcs)</span></span>
-            <span class="item-price">$11.99</span>
+            <span class="item-price">$12.99</span>
           </div>
           <div class="item">
             <span class="item-name">Burritos</span>
-            <span class="item-price">$12.99</span>
+            <span class="item-price">$13.99</span>
           </div>
           <div class="item">
             <span class="item-name">Quesadillas</span>
-            <span class="item-price">$12.99</span>
+            <span class="item-price">$13.99</span>
           </div>
           <div class="item">
             <span class="item-name">Tortas</span>
-            <span class="item-price">$12.99</span>
+            <span class="item-price">$13.99</span>
           </div>
         </div>
       </div>
@@ -506,19 +506,4 @@
           <div class="dips-grid">
             <span class="dip-tag">Ranch</span>
             <span class="dip-tag">Buffalo</span>
-            <span class="dip-tag">BBQ</span>
-            <span class="dip-tag">Marinara</span>
-            <span class="dip-tag">Spicy Ranch</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <script>
-    // Reload every 5 minutes to pick up any menu updates
-    setTimeout(() => location.reload(true), 5 * 60 * 1000);
-  </script>
-</body>
-</html>
+            <span class="dip-t
