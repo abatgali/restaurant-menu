@@ -288,6 +288,17 @@
       color: var(--text-dim);
       font-size: 0.78rem;
     }
+
+    /* ── Logo Watermark ── */
+    .logo-watermark {
+      position: fixed;
+      bottom: 12px;
+      right: 18px;
+      width: 140px;
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: 100;
+    }
   </style>
 </head>
 <body>
@@ -511,6 +522,9 @@
     </div>
 
   </div>
+
+  <!-- ── Logo Watermark ── -->
+  <!-- <img class="logo-watermark" src="images/indy-wings-logo.png" alt="Indy Wings Logo" /> -->
 
   <script>
     // Reload every 5 minutes to pick up any menu updates
