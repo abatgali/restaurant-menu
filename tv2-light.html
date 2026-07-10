@@ -402,6 +402,32 @@
       white-space: nowrap;
     }
 
+    /* ── New Item Flair ── */
+    .new-badge {
+      display: inline-block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      line-height: 1.3;
+      color: #fff;
+      background: linear-gradient(135deg, var(--red-dark), var(--red));
+      padding: 1px 8px;
+      border-radius: 999px;
+      margin-left: 6px;
+      vertical-align: 2px;
+      animation: new-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes new-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.45); }
+      50% { box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
+    }
+
+    .combo-card.new-item {
+      border-color: var(--red);
+      background: #fef2f2;
+    }
+
     /* ── Logo Watermark ── */
     .logo-watermark {
       position: fixed;
@@ -480,6 +506,14 @@
               </div>
             </div>
             <span class="combo-price">$8.99</span>
+          </div>
+
+          <div class="combo-card new-item">
+            <div class="combo-info">
+              <span class="combo-name">Catfish Nuggets & Fries <span class="new-badge">New</span></span>
+              <span class="combo-desc">Golden fried catfish nuggets with fries</span>
+            </div>
+            <span class="combo-price">$11.99</span>
           </div>
 
           <hr class="combo-divider" />
