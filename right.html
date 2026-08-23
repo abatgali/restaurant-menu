@@ -159,6 +159,34 @@
       font-weight: 400;
     }
 
+    .seasoning-options {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 5px;
+    }
+
+    .seasoning-label {
+      color: var(--green);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-right: 2px;
+      text-transform: uppercase;
+    }
+
+    .seasoning-chip {
+      background: #fefce8;
+      border: 1px solid #fde68a;
+      border-radius: 999px;
+      color: var(--gold-dark);
+      font-size: 0.62rem;
+      font-weight: 600;
+      line-height: 1;
+      padding: 4px 7px;
+    }
+
     .item-price {
       font-weight: 700;
       font-size: 0.9rem;
@@ -536,12 +564,16 @@
         <div class="section-title">Sides</div>
         <div class="section-body">
           <div class="item">
-            <span class="item-name">Fries <span class="item-desc">(Regular)</span></span>
-            <span class="item-price">$2.99</span>
-          </div>
-          <div class="item">
-            <span class="item-name">Fries <span class="item-desc">(Large)</span></span>
-            <span class="item-price">$3.99</span>
+            <div>
+              <span class="item-name">Fries</span>
+              <span class="seasoning-options" aria-label="Seasoning choices: Cajun, Lemon Pepper, and Seasoned Salt">
+                <span class="seasoning-label">Pick a seasoning</span>
+                <span class="seasoning-chip">Cajun</span>
+                <span class="seasoning-chip">Lemon Pepper</span>
+                <span class="seasoning-chip">Seasoned Salt</span>
+              </span>
+            </div>
+            <span class="item-price">Reg $2.99 · Lg $3.99</span>
           </div>
           <div class="item">
             <span class="item-name">Chilli Cheese Fries <span class="new-badge">New</span></span>
