@@ -1,694 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="refresh" content="300" />
-  <title>Indy Wings – Menu TV Left</title>
+  <meta name="theme-color" content="#173e2e" />
+  <title>Indy Wings – Wings, Combos & Desserts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap"
-    rel="stylesheet" />
-  <style>
-    :root {
-      --green-dark: #14532d;
-      --green: #166534;
-      --green-light: #15803d;
-      --gold: #a16207;
-      --gold-dark: #854d0e;
-      --red: #dc2626;
-      --red-dark: #b91c1c;
-      --bg: #f5f5f4;
-      --card-bg: #ffffff;
-      --card-border: #d6d3d1;
-      --text: #1c1917;
-      --text-muted: #57534e;
-      --text-dim: #a8a29e;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      font-size: 18px;
-    }
-
-    html,
-    body {
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      background: var(--bg);
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-    }
-
-    body {
-      display: grid;
-      grid-template-rows: auto 1fr;
-    }
-
-    /* ── Header ── */
-    .header {
-      background: linear-gradient(135deg, var(--green-dark), var(--green));
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 8px 40px;
-      border-bottom: 4px solid #eab308;
-    }
-
-    .header .brand {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .header .brand h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.2rem;
-      letter-spacing: 0.06em;
-      color: #fff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    }
-
-    .header .tagline {
-      font-size: 0.85rem;
-      color: #facc15;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-
-    .header .address {
-      text-align: right;
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.4;
-    }
-
-    /* ── Main Grid ── */
-    .menu-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr 1fr;
-      gap: 12px;
-      padding: 12px 18px;
-      overflow: hidden;
-      height: 100%;
-    }
-
-    /* ── Section Card ── */
-    .section {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    }
-
-    .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
-      letter-spacing: 0.06em;
-      padding: 6px 14px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--green-dark), var(--green));
-      border-bottom: 3px solid #eab308;
-      text-align: center;
-    }
-
-    .section-title.red {
-      background: linear-gradient(135deg, var(--red-dark), var(--red));
-    }
-
-    .section-body {
-      padding: 8px 12px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    /* ── Menu Item Row ── */
-    .item {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 4px 0;
-      border-bottom: 1px solid #e7e5e4;
-    }
-
-    .item:last-child {
-      border-bottom: none;
-    }
-
-    .item-name {
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: var(--text);
-    }
-
-    .item-desc {
-      font-size: 0.74rem;
-      color: var(--text-muted);
-      font-weight: 400;
-    }
-
-    .item-price {
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--gold);
-      white-space: nowrap;
-      margin-left: 10px;
-    }
-
-    /* ── Column layouts ── */
-    .col {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    /* ── Sub-header inside section ── */
-    .sub-header {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1rem;
-      color: var(--green-light);
-      letter-spacing: 0.04em;
-      margin-top: 4px;
-      margin-bottom: 2px;
-      padding-bottom: 3px;
-      border-bottom: 1px solid #d6d3d1;
-    }
-
-    /* ── Wings Grid ── */
-    .wings-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      padding: 4px 0;
-    }
-
-    .wing-card {
-      background: #f5f5f4;
-      border: 1px solid #d6d3d1;
-      border-radius: 10px;
-      padding: 8px 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .wing-card .info {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-    }
-
-    .wing-card .count {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.35rem;
-      color: var(--text);
-    }
-
-    .wing-card .type {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .wing-card .price {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.45rem;
-      color: var(--gold);
-    }
-
-    .wing-card.boneless {
-      border-color: var(--green);
-    }
-
-    .wing-card.classic {
-      border-color: var(--red-dark);
-    }
-
-    .mix-match {
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--green-light);
-      font-weight: 600;
-      padding: 3px 0 1px;
-    }
-
-    /* ── Combo Card ── */
-    .combo-card {
-      background: #f5f5f4;
-      border: 1px solid #d6d3d1;
-      border-radius: 10px;
-      padding: 7px 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .combo-card .item-info {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .combo-card .combo-img {
-      width: 48px;
-      height: 48px;
-      border-radius: 8px;
-      object-fit: cover;
-      flex-shrink: 0;
-      margin-right: 4px;
-    }
-
-
-    .combo-card .combo-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-    }
-
-    .combo-card .combo-name {
-      font-weight: 700;
-      font-size: 0.88rem;
-      color: var(--text);
-    }
-
-    .combo-card .combo-desc {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-    }
-
-    .combo-card .combo-price {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.35rem;
-      color: var(--gold);
-    }
-
-    .combo-divider {
-      width: 100%;
-      border: none;
-      border-top: 1px solid #d6d3d1;
-      margin: 2px 0;
-    }
-
-    /* ── Diagonal Photo Collage ── */
-    .collage {
-      flex: 1;
-      display: flex;
-      gap: 6px;
-      overflow: hidden;
-      border-radius: 12px;
-      margin-top: 6px;
-      min-height: 0;
-    }
-
-    .collage-strip {
-      flex: 1;
-      overflow: hidden;
-      transform: skewX(-12deg);
-      border-radius: 8px;
-      position: relative;
-    }
-
-    .collage-strip img {
-      width: 140%;
-      height: 100%;
-      object-fit: cover;
-      transform: skewX(12deg) translateX(-15%);
-      display: block;
-      filter: brightness(1.0) saturate(1.15);
-    }
-
-    .collage-strip:first-child {
-      margin-left: -200px;
-      border-radius: 0 8px 8px 0;
-    }
-
-    .collage-strip:last-child {
-      margin-right: -200px;
-      border-radius: 8px 0 0 8px;
-    }
-
-    .collage-strip::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, transparent 60%, rgba(255, 255, 255, 0.25));
-      pointer-events: none;
-    }
-
-    /* ── Dessert Featured Card ── */
-    .section-title.amber {
-      background: linear-gradient(135deg, #92400e, #b45309);
-      border-bottom-color: #fbbf24;
-    }
-
-    .dessert-featured {
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid #e8d5b0;
-      background: #fffbf0;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-
-    .dessert-featured img {
-      width: 72px;
-      height: 72px;
-      object-fit: cover;
-      display: block;
-      flex-shrink: 0;
-      border-radius: 8px 0 0 8px;
-    }
-
-    .dessert-featured .dessert-info {
-      padding: 8px 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-      flex: 1;
-    }
-
-    .dessert-featured .dessert-name {
-      font-weight: 700;
-      font-size: 0.92rem;
-      color: var(--text);
-    }
-
-    .dessert-featured .dessert-desc {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      margin-top: 3px;
-      line-height: 1.35;
-    }
-
-    .dessert-featured .dessert-price {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.35rem;
-      color: var(--gold);
-      white-space: nowrap;
-    }
-
-    /* ── New Item Flair ── */
-    .new-badge {
-      display: inline-block;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      line-height: 1.3;
-      color: #fff;
-      background: linear-gradient(135deg, var(--red-dark), var(--red));
-      padding: 1px 8px;
-      border-radius: 999px;
-      margin-left: 6px;
-      vertical-align: 2px;
-      animation: new-pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes new-pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.45); }
-      50% { box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
-    }
-
-    .combo-card.new-item {
-      border-color: var(--red);
-      background: #fef2f2;
-    }
-
-    /* ── Logo Watermark ── */
-    .logo-watermark {
-      position: fixed;
-      bottom: 15px;
-      right: 18px;
-      width: 250px;
-      opacity: 1;
-      pointer-events: none;
-      z-index: 100;
-    }
-  </style>
+  <link rel="stylesheet" href="menu.css" />
 </head>
-
 <body>
-
-  <!-- ── HEADER ── -->
-  <div class="header">
+  <header class="masthead">
     <div class="brand">
-      <h1>INDY WINGS</h1>
-      <span class="tagline">Wings / Burgers / Hot Dogs / Fries & More</span>
-    </div>
-    <div class="address">
-      3623 Shelby St<br />Indianapolis, IN 46227
-    </div>
-  </div>
-
-  <!-- ── MENU GRID ── -->
-  <div class="menu-grid">
-
-    <!-- ══ COLUMN 1: Special Combos ══ -->
-    <div class="col">
-      <div class="section" style="flex:1;">
-        <div class="section-title red">Special Combos</div>
-        <div class="section-body" style="gap:6px;">
-
-          <div class="combo-card">
-            <div class="item-info">
-              <img src="images/menu items/Ch Sandwich combo.png" alt="Chicken Sandwich Combo" class="combo-img">
-              <div class="combo-info">
-                <span class="combo-name">Chicken Sandwich Combo</span>
-                <span class="combo-desc">Served with fries & drink</span>
-              </div>
-            </div>
-            <span class="combo-price">$10.99</span>
-          </div>
-
-
-          <div class="combo-card">
-            <div class="item-info">
-              <img src="images/menu items/hamburger and fries.jpg" alt="Hamburger Combo" class="combo-img">
-              <div class="combo-info">
-                <span class="combo-name">Hamburger Combo</span>
-                <span class="combo-desc">With fries & drink</span>
-              </div>
-            </div>
-            <span class="combo-price">$10.99</span>
-          </div>
-
-          <div class="combo-card">
-            <div class="item-info">
-              <img src="images/menu items/Chilli hot dog.jpg" alt="Chilli Hot Dog Combo" class="combo-img">
-              <div class="combo-info">
-                <span class="combo-name">Chilli Hot Dog Combo</span>
-                <span class="combo-desc">With fries & drink<span class="new-badge">New</span></span>
-              </div>
-            </div>
-            <span class="combo-price">$9.99</span>
-          </div>
-
-          <div class="combo-card">
-            <div class="item-info">
-              <img src="images/menu items/fish nuggets.jpg" alt="Chilli Hot Dog Combo" class="combo-img">
-              <div class="combo-info">
-                <span class="combo-name">Catfish Nuggets Combo</span>
-                <span class="combo-desc">With fries & drink<span class="new-badge">New</span></span>
-              </div>
-            </div>
-            <span class="combo-price">$12.99</span>
-          </div>
-
-          <hr class="combo-divider" />
-
-          <div class="sub-header">Wing Combos <span
-              style="font-family:Inter;font-size:0.70rem;color:var(--text-muted);">Served with fries, drink &
-              dip</span></div>
-          <div class="combo-card">
-            <div class="combo-info">
-              <span class="combo-name">5 PC Boneless Combo</span>
-            </div>
-            <span class="combo-price">$11.99</span>
-          </div>
-          <div class="combo-card">
-            <div class="combo-info">
-              <span class="combo-name">5 PC Classic Combo</span>
-            </div>
-            <span class="combo-price">$12.99</span>
-          </div>
-
-          <div class="combo-card">
-            <div class="combo-info">
-              <span class="combo-name">10 PC Boneless Combo</span>
-            </div>
-            <span class="combo-price">$14.99</span>
-          </div>
-          <div class="combo-card">
-            <div class="combo-info">
-              <span class="combo-name">10 PC Classic Combo</span>
-            </div>
-            <span class="combo-price">$16.99</span>
-          </div>
-        </div>
+      <img class="brand-mark" src="images/indy-wings-logo.png" alt="" />
+      <div>
+        <h1 class="brand-name">INDY <span>WINGS</span></h1>
+        <p class="brand-note">Indianapolis, Indiana</p>
       </div>
     </div>
+    <p class="masthead-message">Big wings.<span>Big flavor.</span></p>
+    <p class="location"><strong>Come hungry. Leave happy.</strong>3623 Shelby St · Indianapolis, IN 46227</p>
+  </header>
+  <main class="menu menu-primary" aria-label="Wings, combos, tenders and desserts menu">
+    <section class="column combos" aria-label="Special combos and wing combos">
+      <div class="section-heading"><span class="section-number" aria-hidden="true">01</span><h2>Special Combos</h2></div>
+      <p class="section-note">Make it a meal. All served with fries &amp; a drink.</p>
+      <div class="combo-list">
+        <article class="combo">
+          <img src="images/menu items/Ch Sandwich combo.png" alt="Chicken Sandwich Combo" />
+          <div><h3>Chicken Sandwich Combo</h3></div>
+          <p class="price">$10.99</p>
+        </article>
+        <article class="combo">
+          <img src="images/menu items/hamburger and fries.jpg" alt="Hamburger Combo" />
+          <div><h3>Hamburger Combo</h3></div>
+          <p class="price">$10.99</p>
+        </article>
+        <article class="combo">
+          <img src="images/menu items/Chilli hot dog.jpg" alt="Chilli Hot Dog Combo" />
+          <div><h3>Chilli Hot Dog Combo</h3><span class="badge">New</span></div>
+          <p class="price">$9.99</p>
+        </article>
+        <article class="combo">
+          <img src="images/menu items/fish nuggets.jpg" alt="Catfish Nuggets Combo" />
+          <div><h3>Catfish Nuggets Combo</h3><span class="badge">New</span></div>
+          <p class="price">$12.99</p>
+        </article>
+      </div>
+      <section class="wing-combos" aria-label="Wing combos">
+        <h3 class="subheading">Wing Combos</h3>
+        <p class="section-note">Served with fries, drink &amp; dip</p>
+        <table class="price-table" aria-label="Wing combos with fries, drink and dip">
+          <thead><tr><th scope="col">Pieces</th><th scope="col">Boneless</th><th scope="col">Classic</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">5 <span class="piece-unit">PC</span></th><td class="price">$11.99</td><td class="price">$12.99</td></tr>
+            <tr><th scope="row">10 <span class="piece-unit">PC</span></th><td class="price">$14.99</td><td class="price">$16.99</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
 
-    <!-- ══ COLUMN 2: Wings Only ══ -->
-    <div class="col">
-      <div class="section" style="flex:1;">
-        <div class="section-title">Wings Only</div>
-        <div class="section-body">
-          <p class="mix-match">Flavor Mix & Match available</p>
-
-          <div class="wings-grid">
-            <div class="wing-card boneless">
-              <div class="info">
-                <span class="count">10 PC</span>
-                <span class="type">Boneless</span>
-              </div>
-              <span class="price">$10.99</span>
-            </div>
-
-            <div class="wing-card classic">
-              <div class="info">
-                <span class="count">10 PC</span>
-                <span class="type">Classic</span>
-              </div>
-              <span class="price">$13.99</span>
-            </div>
-
-            <div class="wing-card boneless">
-              <div class="info">
-                <span class="count">15 PC</span>
-                <span class="type">Boneless</span>
-              </div>
-              <span class="price">$15.99</span>
-            </div>
-
-            <div class="wing-card classic">
-              <div class="info">
-                <span class="count">15 PC</span>
-                <span class="type">Classic</span>
-              </div>
-              <span class="price">$21.99</span>
-            </div>
-
-            <div class="wing-card boneless">
-              <div class="info">
-                <span class="count">20 PC</span>
-                <span class="type">Boneless</span>
-              </div>
-              <span class="price">$20.99</span>
-            </div>
-
-            <div class="wing-card classic">
-              <div class="info">
-                <span class="count">20 PC</span>
-                <span class="type">Classic</span>
-              </div>
-              <span class="price">$27.99</span>
-            </div>
-          </div>
-
-          <!-- Tandoori Wings -->
-          <div class="sub-header" style="margin-top:0.75rem;">Tandoori Wings (Oven Cooked)</div>
-          <div class="wings-grid">
-            <div class="wing-card classic">
-              <div class="info">
-                <span class="count">5 PC</span>
-                <span class="type">Tandoori</span>
-              </div>
-              <span class="price">$8.99</span>
-            </div>
-
-            <div class="wing-card classic">
-              <div class="info">
-                <span class="count">10 PC</span>
-                <span class="type">Tandoori</span>
-              </div>
-              <span class="price">$14.99</span>
-            </div>
-          </div>
+    <section class="column wings-panel" aria-labelledby="wings-title">
+      <div class="wings-photo">
+        <img src="images/corey-watson-g6KQZywJUo0-unsplash.jpg" alt="Golden glazed chicken wings" />
+        <div class="wings-photo-title">
+          <p class="eyebrow">The main event</p>
+          <h2 id="wings-title">Wings Only</h2>
         </div>
       </div>
-    </div>
-
-    <!-- ══ COLUMN 3: Chicken Tenders + Desserts ══ -->
-    <div class="col">
-      <div class="section">
-        <div class="section-title">Chicken Tenders</div>
-        <div class="section-body" style="gap:6px;">
-          <div class="combo-card">
-            <div class="combo-info">
-              <span class="combo-name">3 PC Tenders</span>
-              <span class="combo-desc">Tenders Only</span>
-            </div>
-            <span class="combo-price">$8.99</span>
+      <div class="wings-details">
+        <p class="mix-note">Your wings. Your way. Flavor mix &amp; match available.</p>
+        <table class="price-table" aria-label="Wings only">
+          <thead><tr><th scope="col">Pieces</th><th scope="col">Boneless</th><th scope="col">Classic</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">10 <span class="piece-unit">PC</span></th><td class="price">$10.99</td><td class="price">$13.99</td></tr>
+            <tr><th scope="row">15 <span class="piece-unit">PC</span></th><td class="price">$15.99</td><td class="price">$21.99</td></tr>
+            <tr><th scope="row">20 <span class="piece-unit">PC</span></th><td class="price">$20.99</td><td class="price">$27.99</td></tr>
+          </tbody>
+        </table>
+        <section class="tandoori" aria-label="Tandoori wings">
+          <div class="tandoori-heading"><h3>Tandoori Wings</h3><p class="section-note">Oven cooked</p></div>
+          <div class="tandoori-prices">
+            <p><span>5 PC</span><span class="price">$8.99</span></p>
+            <p><span>10 PC</span><span class="price">$14.99</span></p>
           </div>
-          <div class="combo-card">
-            <div class="combo-info">
-              <span class="combo-name">3 PC Tender Combo</span>
-              <span class="combo-desc">Served with fries, drink & one dip</span>
-            </div>
-            <span class="combo-price">$11.99</span>
-          </div>
-          <div class="combo-card">
-            <div class="combo-info">
-              <span class="combo-name">5 PC Tenders</span>
-              <span class="combo-desc">Tenders only</span>
-            </div>
-            <span class="combo-price">$10.99</span>
-          </div>
-          <div class="combo-card">
-            <div class="combo-info">
-              <span class="combo-name">5 PC Meal</span>
-              <span class="combo-desc">Served with fries, drink & dip</span>
-            </div>
-            <span class="combo-price">$13.99</span>
-          </div>
-        </div>
+        </section>
       </div>
+    </section>
 
-      <!-- Desserts -->
-      <div class="section" style="flex:1;">
-        <div class="section-title amber">Desserts</div>
-        <div class="section-body" style="gap:6px;">
-          <div class="dessert-featured">
-            <img src="images/menu items/carrot_cake.png" alt="Carrot Cake" style="object-position: center 20%;" />
+    <div class="column extras">
+      <section class="tenders" aria-label="Chicken tenders">
+        <div class="section-heading"><span class="section-number" aria-hidden="true">02</span><h2>Chicken Tenders</h2></div>
+        <p class="section-note">Keep it simple. Or make it a meal.</p>
+        <table class="price-table" aria-label="Chicken tenders">
+          <thead><tr><th scope="col">Pieces</th><th scope="col">Tenders only</th><th scope="col">Combo / meal</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">3 <span class="piece-unit">PC</span></th><td class="price">$8.99</td><td class="price">$11.99</td></tr>
+            <tr><th scope="row">5 <span class="piece-unit">PC</span></th><td class="price">$10.99</td><td class="price">$13.99</td></tr>
+          </tbody>
+        </table>
+        <p class="tender-note">3 PC Tender Combo &amp; 5 PC Meal include fries, drink &amp; one dip.</p>
+      </section>
+      <section class="desserts" aria-label="Desserts">
+        <div class="section-heading"><span class="section-number" aria-hidden="true">03</span><h2>A Sweet Finish</h2></div>
+        <p class="section-note">Save a little room for dessert.</p>
+        <div class="dessert-list">
+          <article class="dessert">
+            <img src="images/menu items/carrot_cake.png" alt="Carrot cake with cream cheese frosting and walnuts" />
             <div class="dessert-info">
-              <div>
-                <div class="dessert-name">Carrot Cake</div>
-                <div class="dessert-desc">Triple-layer carrot cake slice with velvety cream cheese frosting, sliced
-                  walnuts & raisins</div>
-              </div>
-              <span class="dessert-price">$5.25</span>
+              <h3>Carrot Cake</h3>
+              <p>Triple-layer slice with velvety cream cheese frosting, sliced walnuts &amp; raisins</p>
+              <span class="price">$5.25</span>
             </div>
-          </div>
-          <div class="dessert-featured">
-            <img src="images/menu items/gulab-jamun.jpg" alt="Honey Ball" />
+          </article>
+          <article class="dessert">
+            <img src="images/menu items/gulab-jamun.jpg" alt="Syrup-soaked honey balls" />
             <div class="dessert-info">
-              <div>
-                <div class="dessert-name">Honey Ball</div>
-                <div class="dessert-desc">Soft, syrup-soaked dumplings (4 pcs)</div>
-              </div>
-              <span class="dessert-price">$3.99</span>
+              <h3>Honey Ball</h3>
+              <p>Soft, syrup-soaked dumplings<br />4 pieces</p>
+              <span class="price">$3.99</span>
             </div>
-          </div>
+          </article>
         </div>
-      </div>
+      </section>
     </div>
-
-  </div>
-
+  </main>
+  <footer class="footer">
+    <span>Wings / Burgers / Hot Dogs / Fries &amp; More</span>
+    <span class="footer-motto">Pick your wings. Find your flavor.</span>
+  </footer>
 </body>
-
 </html>
