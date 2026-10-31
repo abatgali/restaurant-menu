@@ -210,6 +210,19 @@
       gap: 1px;
     }
 
+    .wing-card .item-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .wing-card .item-img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
     .wing-card .count {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.35rem;
@@ -423,9 +436,34 @@
       50% { box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
     }
 
-    .combo-card.new-item {
-      border-color: var(--red);
-      background: #fef2f2;
+    .combo-card.featured-item {
+      border-color: #e7d7ac;
+      background: #fffbeb;
+      box-shadow: inset 3px 0 #c9a24c;
+    }
+
+    .wing-card.new-item {
+      border: 2px solid #eab308;
+      background: #fffbeb;
+      animation: chicken-highlight 3s ease-in-out infinite;
+    }
+
+    @keyframes chicken-highlight {
+      0%, 100% {
+        border-color: #eab308;
+        box-shadow: 0 0 0 0 rgba(234, 179, 8, 0);
+      }
+      50% {
+        border-color: var(--red);
+        box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.25), 0 0 16px rgba(234, 179, 8, 0.3);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .wing-card.new-item,
+      .wing-card.new-item .new-badge {
+        animation: none;
+      }
     }
 
     /* ── Logo Watermark ── */
@@ -486,23 +524,23 @@
             <span class="combo-price">$11.99</span>
           </div>
 
-          <div class="combo-card">
+          <div class="combo-card featured-item">
             <div class="item-info">
               <img src="images/menu items/Chilli hot dog.jpg" alt="Chilli Hot Dog Combo" class="combo-img">
               <div class="combo-info">
                 <span class="combo-name">Chilli Hot Dog Combo</span>
-                <span class="combo-desc">With fries & drink<span class="new-badge">New</span></span>
+                <span class="combo-desc">With fries & drink</span>
               </div>
             </div>
             <span class="combo-price">$10.99</span>
           </div>
 
-          <div class="combo-card">
+          <div class="combo-card featured-item">
             <div class="item-info">
               <img src="images/menu items/fish nuggets.jpg" alt="Chilli Hot Dog Combo" class="combo-img">
               <div class="combo-info">
                 <span class="combo-name">Catfish Nuggets Combo</span>
-                <span class="combo-desc">With fries & drink<span class="new-badge">New</span></span>
+                <span class="combo-desc">With fries & drink</span>
               </div>
             </div>
             <span class="combo-price">$12.99</span>
@@ -599,13 +637,13 @@
             </div>
           </div>
 
-          <!-- Tandoori Wings -->
-          <div class="sub-header" style="margin-top:0.75rem;">Tandoori Wings (Oven Cooked)</div>
+          <!-- Tandoori -->
+          <div class="sub-header" style="margin-top:0.75rem;">Tandoori (Oven Cooked)</div>
           <div class="wings-grid">
             <div class="wing-card classic">
               <div class="info">
                 <span class="count">5 PC</span>
-                <span class="type">Tandoori</span>
+                <span class="type">Tandoori Wings</span>
               </div>
               <span class="price">$9.99</span>
             </div>
@@ -613,9 +651,20 @@
             <div class="wing-card classic">
               <div class="info">
                 <span class="count">10 PC</span>
-                <span class="type">Tandoori</span>
+                <span class="type">Tandoori Wings</span>
               </div>
               <span class="price">$16.99</span>
+            </div>
+
+            <div class="wing-card classic new-item" style="grid-column:1 / -1;">
+              <div class="item-info">
+                <img src="images/menu items/grilled-chicken-bites.png" alt="Grilled Chicken Bites" class="item-img">
+                <div class="info">
+                  <span class="count">10 PC<span class="new-badge">New</span></span>
+                  <span class="type">Grilled Chicken Bites</span>
+                </div>
+              </div>
+              <span class="price">$15.99</span>
             </div>
           </div>
         </div>
